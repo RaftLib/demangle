@@ -3,6 +3,16 @@ project(demangle)
 set( version 1.1 )
 set( CMAKE_INCLUDE_CURRENT_DIR ON )
 
+
+##
+# Build with -fPIC
+##
+mark_as_advanced( BUILD_FPIC )
+set( BUILD_FPIC true CACHE BOOL "Generate position-independent code (-fPIC)" )
+if( BUILD_FPIC )
+    set(BUILD_FPIC_FLAG "-fPIC")
+endif( BUILD_FPIC )
+
 ##
 # DEMANGLE_CUSTOM_NAMESPACE - set to true if you want 
 # to set your own custom namespace.
